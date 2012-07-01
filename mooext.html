@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MooExt.js</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/mootools/1.4.5/mootools-yui-compressed.js"></script>
+	<script type="text/javascript" src="mooext.js"></script>
+</head>
+<body>
+	<h1>MooExt demo</h1>
+	<p><a href="http://www.othersite.com">outside container link</a></p>
+	<hr />
+	<div id="linkcontainer">
+	<p><a href="http://www.mysite.com/page">my page 1</a></p>
+	<p><a href="http://www.mysite.com/page2" title="link">my page 2</a></p>
+	<p><a href="http://www.mysite.com/page3" rel="ext" title="ext link">my page 3</a></p>
+	<p><a href="http://www.mysite.com/page4">my page 4</a></p>
+	<p><a href="http://mysite.com/page5">my page 5</a></p>
+	<p><a href="http://sub.mysite.com/page6">my page 6</a></p>
+	<p><a href="http://www.othersite.com/page">my page 7</a></p>
+	<p><a href="http://www.mysite.com/page">my page 8</a></p>
+</div>
+<script type="text/javascript">
+	var action = Browser.ie?'load':'domready';
+	window.addEvent(action, function(){
+		var extLinks = new ExternalLinks('linkcontainer', {
+			imageLocation:'ext.png',
+			domain:'mysite.com'
+		});
+	});
+</script>
+</body>
+</html>
